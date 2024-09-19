@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Gems</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="header-placeholder"></header>
+
+
+    <main>
+        <h1>Welcome to Remote Gems</h1>
+        <p>Your one-stop platform for remote job opportunities and virtual assistance.</p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 remotegemsHub.com</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
