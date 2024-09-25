@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remote Gems</title>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header id="header-placeholder"></header>
-
+    <header>
+        <h1>Remote Gems</h1>
+    </header>
 
     <main>
-        <h1>Welcome to Remote Gems</h1>
-        <p>Your one-stop platform for remote job opportunities and virtual assistance.</p>
-    
+        <div class="eye-container">
+            <svg width="311.3" height="233.3" class="loader__eyes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.3 233.3">
+                <g fill="none" stroke="white" stroke-width="5">
+                    <ellipse cx="155.65" cy="116.65" rx="150" ry="100"/>
+                    <circle cx="155.65" cy="116.65" r="20" class="pupil" />
+                </g>
+            </svg>
+            <h2>Your one-stop platform for remote job opportunities and virtual assistance.</h2>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 remotegemsHub.com</p>
+        <p>&copy; 2024 Remote Gems Hub</p>
     </footer>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

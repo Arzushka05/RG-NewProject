@@ -42,3 +42,22 @@ console.log('- Resource successfully created.(201)');
   }
     console.log('Script execution complete.');
   });
+  document.addEventListener('mousemove', (event) => {
+    const pupil = document.querySelector('.pupil');
+    const eyeContainer = document.querySelector('.loader__eyes');
+    
+    const eyeRect = eyeContainer.getBoundingClientRect();
+    const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+    const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+
+    const deltaX = event.clientX - eyeCenterX;
+    const deltaY = event.clientY - eyeCenterY;
+    
+    const angle = Math.atan2(deltaY, deltaX);
+    const distance = Math.min(15, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
+    
+    const pupilX = Math.cos(angle) * distance;
+    const pupilY = Math.sin(angle) * distance;
+    
+    pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+});
