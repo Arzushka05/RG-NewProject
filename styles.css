@@ -117,7 +117,7 @@ main {
 
 .eye-container h2 {
     font-size: 2em;  
-    color: #ffffff; 
+    color: #161515; 
     text-align: center;  
     letter-spacing: 1.5px;  
     text-shadow: 2px 2px 4px rgb(0, 0, 0);  
@@ -177,7 +177,7 @@ footer {
     }
 }
 
-/* Responsive design for smaller screens */
+
 @media (max-width: 768px) {
     .single-sentence {
         font-size: 1.2em;
@@ -198,3 +198,15 @@ footer {
         transform: scale(1.05);
     }
 }
+
+.iconic-title {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-align: center;
+    letter-spacing: 0.05em; 
+    color: #60605e; 
+    text-shadow: 3px 3px 5px rgba(255, 255, 26, 0.689);
+    font-family: 'Cinzel', serif; 
+    margin-top: 10px;
+}
+

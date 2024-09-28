@@ -61,3 +61,13 @@ console.log('- Resource successfully created.(201)');
     
     pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
 });
+let originalTitle = document.title;
+
+window.addEventListener('blur', () => {
+    document.title = '👋 Come back to Remote Gems!';
+});
+
+window.addEventListener('focus', () => {
+    document.title = originalTitle;
+});
+

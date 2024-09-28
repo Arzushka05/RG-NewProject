@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote Gems</title>
+
+    <title>✧ Remote Gems ✧</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <h1>Remote Gems</h1>
+        <h1 class="iconic-title">✧ Remote Gems ✧</h1>
     </header>
 
     <main>
-        <div class="eye-container">
-            <svg width="311.3" height="233.3" class="loader__eyes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.3 233.3">
-                <g fill="none" stroke="white" stroke-width="5">
-                    <ellipse cx="155.65" cy="116.65" rx="150" ry="100"/>
-                    <circle cx="155.65" cy="116.65" r="20" class="pupil" />
+       
+            
+        </div>
+        <div class="eye-container">   
+   
+            <svg width="250" height="200" class="loader__eyes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 200">
+                <defs>
+                    <!-- Gradient for the iris -->
+                    <radialGradient id="irisGradient1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:#ff66b3; stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ffccff; stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                <g>
+                    <ellipse cx="125" cy="100" rx="60" ry="40" fill="white" />
+                    <circle cx="125" cy="100" r="25" fill="url(#irisGradient1)" />
+                    <circle cx="125" cy="100" r="12" fill="black" class="pupil" />
+                    <circle cx="115" cy="90" r="5" fill="white" opacity="0.9" />
+                    <circle cx="130" cy="85" r="3" fill="rgba(255, 255, 255, 0.5)" opacity="0.8" />
                 </g>
             </svg>
         </div>
@@ -28,5 +43,28 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const eye = document.querySelector('.loader__eyes');
+        const pupil = document.querySelector('.pupil');
+
+        eye.addEventListener('mousemove', (e) => {
+            const rect = eye.getBoundingClientRect();
+            const eyeCenterX = rect.left + rect.width / 2;
+            const eyeCenterY = rect.top + rect.height / 2;
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const deltaX = mouseX - eyeCenterX;
+            const deltaY = mouseY - eyeCenterY;
+            const angle = Math.atan2(deltaY, deltaX);
+            const distance = Math.min(12, Math.sqrt(deltaX * deltaX + deltaY * deltaY)); // Limit pupil movement
+
+            const pupilX = eyeCenterX + Math.cos(angle) * distance;
+            const pupilY = eyeCenterY + Math.sin(angle) * distance;
+
+            pupil.setAttribute('cx', pupilX);
+            pupil.setAttribute('cy', pupilY);
+        });
+    </script>
 </body>
 </html>
