@@ -70,4 +70,8 @@ window.addEventListener('blur', () => {
 window.addEventListener('focus', () => {
     document.title = originalTitle;
 });
+document.getElementById('nextPageBtn').addEventListener('click', function() {
+  // Navigate to the next page or section
+  window.location.href = 'next-page.html'; // Replace with your desired URL
+});
 

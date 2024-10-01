@@ -3,25 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>✧ Remote Gems ✧</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #efe0ecdc; 
+            color: #fff;
+            height: 100%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            width: 100vw; 
+            height: auto; 
+            padding: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            box-sizing: border-box; 
+            opacity: 0; 
+            transform: translateY(20px); 
+            animation: fadeIn 1s forwards; 
+        }
+
+        .iconic-title {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-align: center;
+    letter-spacing: 0.05em; 
+    color: #60605e; 
+    text-shadow: 3px 3px 5px rgba(255, 255, 26, 0.689);
+    font-family: 'Cinzel', serif; 
+    margin: 5cm 0 10px 0; 
+}
+
+        .button-container {
+            margin-bottom: 10px; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .eye-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            
+            background-color: #eab8e3ba; 
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+            position: relative; 
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px; 
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1 class="iconic-title">✧ Remote Gems ✧</h1>
-    </header>
-
     <main>
-       
-            
+        <h1 class="iconic-title">✧ Remote Gems ✧</h1>
+
+        <div class="button-container">
+            <button id="nextPageBtn" class="next-page-button">Enter</button>
         </div>
+
         <div class="eye-container">   
-   
             <svg width="250" height="200" class="loader__eyes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 200">
                 <defs>
-                    <!-- Gradient for the iris -->
                     <radialGradient id="irisGradient1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
                         <stop offset="0%" style="stop-color:#ff66b3; stop-opacity:1" />
                         <stop offset="100%" style="stop-color:#ffccff; stop-opacity:1" />
@@ -39,7 +111,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Remote Gems Hub</p>
+        <p>&copy; 2024 Remote Gems Hub | <a href="#about" style="color: #000; text-decoration: underline;">Inside Look</a></p>
     </footer>
 
     <script src="script.js"></script>
@@ -65,6 +137,16 @@
             pupil.setAttribute('cx', pupilX);
             pupil.setAttribute('cy', pupilY);
         });
+        enterButton.addEventListener('mouseover', () => {
+            pupil.setAttribute('d', 'M125,108 C115,100,95,100,75,120 C65,130,60,145,75,160 C95,180,125,160,125,160 C125,160,155,180,175,160 C190,145,185,130,175,120 C155,100,135,100,125,108 Z');
+            pupil.setAttribute('fill', 'red'); 
+        });
+
+        enterButton.addEventListener('mouseout', () => {
+            pupil.setAttribute('d', ''); 
+            pupil.setAttribute('fill', 'black'); 
+        });
+
     </script>
 </body>
 </html>
